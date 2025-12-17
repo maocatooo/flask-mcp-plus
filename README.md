@@ -66,6 +66,26 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
+## Use in Client
+
+To use your Flask-MCP server with an MCP client, you need to configure the client to connect to your server's
+endpoint.   
+The configuration format varies depending on the specific MCP client you're using, but generally follows this structure:
+
+```json
+{
+  "mcpServers": {
+    "my_mcp_server": {
+      "autoApprove": [],
+      "disabled": false,
+      "timeout": 60,
+      "type": "streamableHttp",
+      "url": "http://127.0.0.1:5000/mcp"
+    }
+  }
+}
+```
+
 ## Core Concepts
 
 ### Tools
