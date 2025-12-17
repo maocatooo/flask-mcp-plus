@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "flask-mcp"
+name = "flask-mcp-core"
 version = "0.1.0"
 description = "Flask integration for Model Context Protocol (MCP)"
 readme = "README.md"

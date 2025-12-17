@@ -25,7 +25,7 @@ interactions between language models and external systems.
 ## Installation
 
 ```bash
-pip install flask-mcp
+pip install flask-mcp-core
 ```
 
 ## Quick Start
