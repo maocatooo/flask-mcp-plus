@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "flask-mcp-core"
+version = "0.1.0"
+description = "Flask integration for Model Context Protocol (MCP)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "maocat", email = "maocatzk@gmail.com" }
+]
+keywords = ["flask", "mcp", "model-context-protocol"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Framework :: Flask",
+]
+dependencies = [
+    "flask>=3",
+    "pydantic>=2",
+]
+
+[project.urls]
+Homepage = "https://github.com/maocatooo/flask-mcp"
+Documentation = "https://github.com/maocatooo/flask-mcp#readme"
+Repository = "https://github.com/maocatooo/flask-mcp"
+Issues = "https://github.com/maocatooo/flask-mcp/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/flask_mcp"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/flask_mcp",
+    "README.md",
+    "LICENSE",
+]
+exclude = [
+    "src/example",
+    "*.pyc",
+    "__pycache__",
+]
