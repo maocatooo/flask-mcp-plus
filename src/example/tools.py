@@ -2,7 +2,7 @@ from typing import Annotated
 
 from flask import Flask
 
-from flask_mcp import MCP, Text, Field, Image, ToolCallResult
+from flask_mcp_plus import MCP, Text, Field, Image, ToolCallResult
 
 app = Flask(__name__)
 # mcp = MCP(app, "mcp_server_name", __name__)

@@ -1,6 +1,6 @@
 from flask import Flask
 
-from flask_mcp import MCP
+from flask_mcp_plus import MCP
 
 app = Flask(__name__)
 # mcp = MCP(app, "mcp_server_name", __name__)
