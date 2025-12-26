@@ -1,4 +1,4 @@
-# Flask-MCP
+# Flask-MCP-Plus
 
 Flask integration for Model Context Protocol (MCP) - a framework for building MCP servers with Flask.
 
@@ -8,7 +8,7 @@ Flask integration for Model Context Protocol (MCP) - a framework for building MC
 
 ## Overview
 
-Flask-MCP provides a simple and intuitive way to create Model Context Protocol (MCP) servers using Flask. It allows
+Flask-MCP-Plus provides a simple and intuitive way to create Model Context Protocol (MCP) servers using Flask. It allows
 developers to easily expose tools, resources, and prompts that can be consumed by MCP clients, facilitating rich
 interactions between language models and external systems.
 
@@ -25,7 +25,7 @@ interactions between language models and external systems.
 ## Installation
 
 ```bash
-pip install flask-mcp-core
+pip install flask-mcp-plus
 ```
 
 ## Quick Start
@@ -34,7 +34,7 @@ Here's a basic example to get you started:
 
 ```python
 from flask import Flask
-from flask_mcp import MCP
+from flask_mcp_plus import MCP
 
 app = Flask(__name__)
 mcp = MCP()
@@ -68,7 +68,7 @@ if __name__ == "__main__":
 
 ## Use in Client
 
-To use your Flask-MCP server with an MCP client, you need to configure the client to connect to your server's
+To use your Flask-MCP-Plus server with an MCP client, you need to configure the client to connect to your server's
 endpoint.   
 The configuration format varies depending on the specific MCP client you're using, but generally follows this structure:
 
@@ -93,7 +93,7 @@ The configuration format varies depending on the specific MCP client you're usin
 Tools are functions that can be called by MCP clients. They can accept parameters and return structured results.
 
 ```python
-from flask_mcp import Text, Field
+from flask_mcp_plus import Text, Field
 from typing import Annotated
 
 
@@ -116,7 +116,8 @@ def add_float(a: Annotated[float, Field(description="The first number")],
 
 ### Resources
 
-Resources provide data that can be fetched by URI. Flask-MCP supports both static URIs and dynamic URI templates with
+Resources provide data that can be fetched by URI. Flask-MCP-Plus supports both static URIs and dynamic URI templates
+with
 parameters.
 
 ```python
@@ -138,7 +139,7 @@ def get_user(user_id: str):
 Prompts are specialized functions that return structured content to guide AI models.
 
 ```python
-from flask_mcp import Message, Text
+from flask_mcp_plus import Message, Text
 
 
 @mcp.prompt
@@ -178,7 +179,7 @@ def api_call():
 Tools can return multiple content types in a single response:
 
 ```python
-from flask_mcp import Image, Text
+from flask_mcp_plus import Image, Text
 
 
 @mcp.tool
@@ -219,13 +220,6 @@ mcp.init_app(
 )
 ```
 
-## API Endpoints
-
-Once configured, Flask-MCP automatically creates the following endpoints:
-
-- `POST /mcp` - Main MCP JSON-RPC endpoint
-- `GET /mcp/health` - Health check endpoint
-
 ## Development
 
 ### Prerequisites
@@ -238,8 +232,8 @@ Once configured, Flask-MCP automatically creates the following endpoints:
 
 ```bash
 # Clone the repository
-git clone https://github.com/flask-mcp/flask-mcp.git
-cd flask-mcp
+https://github.com/maocatooo/flask-mcp-plus
+cd flask-mcp-plus
 
 # Install dependencies
 uv sync
@@ -260,4 +254,4 @@ This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENS
 ## Support
 
 If you encounter any issues or have questions, please file an issue on
-the [GitHub repository](https://github.com/flask-mcp/flask-mcp/issues).
+the [GitHub repository](https://github.com/maocatooo/flask-mcp-plus/issues).
